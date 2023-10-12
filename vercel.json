@@ -4,10 +4,6 @@
     {
       "src": "./src/index.js",
       "use": "@now/node"
-    },
-    {
-      "src": "./src/**/*.js",
-      "use": "@now/node"
     }
   ],
   "routes": [
