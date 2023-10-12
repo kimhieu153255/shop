@@ -6,10 +6,10 @@ const port = process.env.PORT || 3000;
 const cors = require("cors");
 const path = require("path");
 const morgan = require("morgan");
-const passport = require("./middlewares/Passport.w");
+const passport = require("./src/middlewares/Passport.w");
 // setup session
 
-const { store } = require("./db/MongoStore");
+const { store } = require("./src/db/MongoStore");
 
 app.use(cors());
 app.use(morgan("dev"));
@@ -39,17 +39,17 @@ app.get("/error", (req, res) => {
   res.send("Error");
 });
 
-const userRouter = require("./routers/User.r");
+const userRouter = require("./src/routers/User.r");
 app.use("/user", userRouter);
-const storeRouter = require("./routers/Store.r");
+const storeRouter = require("./src/routers/Store.r");
 app.use("/store", storeRouter);
-const cartRouter = require("./routers/Cart.r");
+const cartRouter = require("./src/routers/Cart.r");
 app.use("/cart", cartRouter);
-const productRouter = require("./routers/Product.r");
+const productRouter = require("./src/routers/Product.r");
 app.use("/product", productRouter);
-const addressRouter = require("./routers/Address.r");
+const addressRouter = require("./src/routers/Address.r");
 app.use("/address", addressRouter);
-const orderRouter = require("./routers/Order.r");
+const orderRouter = require("./src/routers/Order.r");
 app.use("/api/order", orderRouter);
 
 app.use((err, req, res, next) => {
