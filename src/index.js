@@ -11,7 +11,7 @@ const passport = require("./middlewares/Passport.w");
 
 const { store } = require("./db/MongoStore");
 
-// app.use(cors());
+app.use(cors());
 app.use(morgan("dev"));
 app.use(express.json());
 
