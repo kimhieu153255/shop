@@ -3,8 +3,7 @@
     "start": "nodemon src/server.js",
     "dev": "nodemon src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "vercel-build": "echo \"vercel-build\"",
-    "build": "nodemon src/server.js"
+    "vercel-build": "npm run build"
   },
   "dependencies": {
     "base64-img": "^1.0.1",
