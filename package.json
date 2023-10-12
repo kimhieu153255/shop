@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "nodemon src/server.js"
+    "start": "nodemon ./src/server.js"
   },
   "dependencies": {
     "@vercel/node": "^3.0.7",
