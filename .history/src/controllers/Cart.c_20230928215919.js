@@ -140,13 +140,6 @@ exports.DeleteCart = async (req, res, next) => {
       return res.status(400).send("Missing some field");
     const cart = await CartModel.findOne({ userId, productId, color, size });
     if (!cart) return res.status(400).send("Cart is not exist");
-    const inforProduct = await InforProduct.findOne({
-      productId,
-      color,
-      size,
-    });
-    inforProduct.quantity += cart.quantity;
-    await inforProduct.save();
     await cart.deleteOne();
     res.status(200).send({ message: "Success!!!" });
   } catch (err) {

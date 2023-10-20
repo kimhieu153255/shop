@@ -46,7 +46,7 @@ exports.AddAddress = async (req, res, next) => {
       isDefault: defaultAddress ? false : true,
     });
     await newAddress.save();
-    return res.status(200).send({ message: "Success!!!", data: newAddress });
+    res.status(200).send({ message: "Success!!!", data: newAddress });
   } catch (err) {
     next(err);
   }

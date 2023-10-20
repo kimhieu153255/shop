@@ -59,7 +59,8 @@ exports.RefundPayment = async (req, res, next) => {
 exports.getPaymentIntent = async (req, res, next) => {
   try {
     const { sessionId } = req.query;
-    // const sessionId = "cs_test_a1aF1obefDsVTkPneE5JP0XlOD2wDDpPzejGYKKG8oC8A1r5d18bJu9rUO";
+    // const sessionId =
+    //   "cs_test_a1aF1obefDsVTkPneE5JP0XlOD2wDDpPzejGYKKG8oC8A1r5d18bJu9rUO";
     const session = await stripe.checkout.sessions.retrieve(sessionId);
     console.log("Session:", session);
     return res.status(200).send({ message: "Success!!!", data: session });

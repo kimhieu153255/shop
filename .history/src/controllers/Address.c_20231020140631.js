@@ -8,7 +8,6 @@ exports.AddAddress = async (req, res, next) => {
     console.log(address, userId);
     if (!userId) return res.status(400).send("Missing userId!!!");
     const checkUserId = await UserModel.findById(userId);
-    console.log(checkUserId);
     console.log("vào");
     if (!checkUserId) return res.status(400).send("UserId is not exist!!!");
 
@@ -46,7 +45,7 @@ exports.AddAddress = async (req, res, next) => {
       isDefault: defaultAddress ? false : true,
     });
     await newAddress.save();
-    return res.status(200).send({ message: "Success!!!", data: newAddress });
+    res.status(200).send({ message: "Success!!!", data: newAddress });
   } catch (err) {
     next(err);
   }

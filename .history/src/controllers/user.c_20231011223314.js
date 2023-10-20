@@ -10,7 +10,6 @@ const { uploadImageToFirebase } = require("./Product.c");
 exports.Login = async (req, res, next) => {
   try {
     const { username, password } = req.body;
-    console.log(username, password);
     let user = await userModel.findOne({ username });
     if (!user) {
       return res.status(400).send("User is not exist");
