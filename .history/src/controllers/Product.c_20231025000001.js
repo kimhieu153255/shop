@@ -184,7 +184,6 @@ exports.GetAllProductByCategory = async (req, res, next) => {
 
 exports.uploadImageToFirebase = async (req, res, next) => {
   try {
-    console.log("vào");
     if (!req.file) return res.status(400).json("No image file provided");
 
     const tempImagePath = req.file.path;

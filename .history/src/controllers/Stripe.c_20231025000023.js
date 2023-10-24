@@ -43,6 +43,7 @@ exports.createCheckoutSession = async (req, res, next) => {
 
 exports.RefundPayment = async (req, res, next) => {
   try {
+    // const { chargeId } = req.query;
     const { sessionId } = req.query;
     const session = await stripe.checkout.sessions.retrieve(sessionId);
     const refund = await stripe.refunds.create({
