@@ -6,6 +6,7 @@ const CartController = require("./Cart.c");
 
 exports.createCheckoutSession = async (req, res, next) => {
   try {
+    console.log(req.body);
     const line_items = req.body.productOrderArr.map((item) => {
       return {
         price_data: {
